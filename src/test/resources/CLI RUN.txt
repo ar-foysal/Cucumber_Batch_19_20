@@ -1,0 +1,9 @@
+mvn test
+mvn test -D"cucumber.filter.tags=@login"
+mvn test -D"cucumber.filter.tags=not @negative"
+mvn test -D"cucumber.filter.tags=@negative and @login"
+mvn test -D"cucumber.filter.tags=@negative or @sanity"
+
+https://cucumber.io/docs/cucumber/api/?lang=java#tags
+
+https://cucumber.io/docs/cucumber/api/?lang=java#step-arguments

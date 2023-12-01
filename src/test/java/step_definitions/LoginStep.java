@@ -57,6 +57,5 @@ public class LoginStep {
     @Then("User should see an error message {string}")
     public void user_should_see_an_error_message(String errorMsg) {
         Assert.assertEquals(demoLoginPage.getElementText(demoLoginPage.error), errorMsg);
-
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -28,7 +29,9 @@ public class DriverSetup {
 
     public static WebDriver createBrowser(String browserName){
         if (browserName.equalsIgnoreCase("chrome")){
-            return new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.setHeadless(false);
+            return new ChromeDriver(options);
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
             return new FirefoxDriver();
